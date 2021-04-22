@@ -12,9 +12,9 @@
   ],
   "main": "dist/Popover.js",
   "scripts": {
-    "build": "yarn clean && tsc -p . && yarn copy-files",
+    "build": "yarn clean && tsc -p . && css-minify -d src -o src && yarn copy-files",
     "clean": "rm -rf dist/",
-    "copy-files": "cp src/{index.d.ts,style.css} dist/"
+    "copy-files": "cp src/{index.d.ts,style.min.css} dist/"
   },
   "repository": {
     "type": "git",
@@ -32,6 +32,7 @@
   },
   "devDependencies": {
     "@types/react": "^17.0.3",
+    "css-minify": "^1.1.0",
     "prettier": "^2.2.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",

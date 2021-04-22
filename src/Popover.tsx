@@ -1,8 +1,14 @@
 import React, { FC, ReactNode, useRef, useEffect } from 'react';
 import { PopoverProps } from '.';
-import './style.css';
+import './style.min.css';
 
-const Popover: FC<PopoverProps> = ({ content, isOpen, onClickOutside, children }) => {
+const Popover: FC<PopoverProps> = ({
+  content,
+  isOpen,
+  onClickOutside,
+  position = 'bottom',
+  children,
+}) => {
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -21,7 +27,7 @@ const Popover: FC<PopoverProps> = ({ content, isOpen, onClickOutside, children }
   return (
     <div className='container' ref={ref}>
       {children}
-      {isOpen && <span className='popover'>{content}</span>}
+      {isOpen && <span className={`popover ${position}`}>{content}</span>}
     </div>
   );
 };

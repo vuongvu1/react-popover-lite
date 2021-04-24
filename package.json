@@ -13,8 +13,8 @@
   "main": "dist/Popover.js",
   "scripts": {
     "build": "yarn clean && tsc -p . && css-minify -d src -o src && yarn copy-files",
-    "clean": "rm -rf dist/",
-    "copy-files": "cp src/{index.d.ts,style.min.css} dist/"
+    "clean": "rm -rf dist/ src/style.min.css",
+    "copy-files": "cp src/index.d.ts dist/Popover.d.ts && cp src/style.min.css dist/"
   },
   "repository": {
     "type": "git",

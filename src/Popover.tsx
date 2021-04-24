@@ -1,4 +1,4 @@
-import React, { FC, ReactNode, useRef, useEffect } from 'react';
+import React, { FC, useRef, useEffect } from 'react';
 import { PopoverProps } from '.';
 import './style.min.css';
 

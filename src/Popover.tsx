@@ -1,35 +1,26 @@
-import React, { FC, useRef, useEffect } from 'react';
-import { PopoverProps } from '.';
+import React, { useEffect, ReactNode, forwardRef } from 'react';
+import debounce from './debounce';
+import { CoordType } from '.';
 import './style.min.css';
 
-const Popover: FC<PopoverProps> = ({
-  content,
-  isOpen,
-  onClickOutside,
-  position = 'bottom',
-  children,
-}) => {
-  const ref = useRef<HTMLDivElement>(null);
+type Props = {
+  coords: CoordType;
+  updateCoords: () => void;
+  children: ReactNode;
+};
 
+const Popover = forwardRef<HTMLDivElement, Props>(({ children, coords, updateCoords }, ref) => {
   useEffect(() => {
-    const clickOutside = (event: MouseEvent) => {
-      const eventTarget = event.target as Node;
-      if (!ref.current?.contains(eventTarget)) {
-        onClickOutside();
-      }
-    };
-    document.addEventListener('mousedown', clickOutside);
-    return () => {
-      document.removeEventListener('mousedown', clickOutside);
-    };
-  }, []);
+    const updatePopoverCoords = debounce(updateCoords, 100);
+    window.addEventListener('resize', updatePopoverCoords);
+    return () => window.removeEventListener('resize', updatePopoverCoords);
+  }, [updateCoords]);
 
   return (
-    <div className='container' ref={ref}>
+    <div className='popover' style={{ ...coords }} ref={ref}>
       {children}
-      {isOpen && <span className={`popover ${position}`}>{content}</span>}
     </div>
   );
-};
+});
 
 export default Popover;

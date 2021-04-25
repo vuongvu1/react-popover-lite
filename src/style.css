@@ -1,57 +1,9 @@
 .container {
   position: relative;
-  display: inline-block;
+  display: flex;
 }
 
 .popover {
   position: absolute;
-  z-index: 999;
-}
-
-.top {
-  top: 0;
-  left: 50%;
-  transform: translate(-50%, -100%);
-}
-
-.bottom {
-  bottom: 0;
-  left: 50%;
-  transform: translate(-50%, 100%);
-}
-
-.left {
-  top: 50%;
-  left: 0;
-  transform: translate(-100%, -50%);
-}
-
-.right {
-  top: 50%;
-  right: 0;
-  transform: translate(100%, -50%);
-}
-
-.topLeft {
-  top: 0;
-  left: 0;
-  transform: translate(0, -100%);
-}
-
-.topRight {
-  top: 0;
-  right: 0;
-  transform: translate(0, -100%);
-}
-
-.bottomLeft {
-  bottom: 0;
-  left: 0;
-  transform: translate(0, 100%);
-}
-
-.bottomRight {
-  bottom: 0;
-  right: 0;
-  transform: translate(0, 100%);
+  z-index: 9999;
 }

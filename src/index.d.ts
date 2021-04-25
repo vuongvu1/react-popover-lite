@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { ReactNode, FC } from 'react';
 
 export type Position =
   | 'top'
@@ -11,8 +11,15 @@ export type Position =
   | 'bottomRight';
 
 export interface PopoverProps {
+  /**
+   * Determine the popover content
+   */
   content: ReactNode;
   isOpen: boolean;
   onClickOutside: () => void;
   position?: Position;
 }
+
+declare const Popover: FC<PopoverProps>;
+
+export default Popover;

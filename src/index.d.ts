@@ -12,11 +12,11 @@ export type Position =
 
 export interface PopoverProps {
   /**
-   * Determine the popover content
+   * The popover content
    */
   content: ReactNode;
   isOpen: boolean;
-  onClickOutside: () => void;
+  onClickOutside?: () => void;
   position?: Position;
 }
 

@@ -8,7 +8,11 @@ export type Position =
   | 'topLeft'
   | 'topRight'
   | 'bottomLeft'
-  | 'bottomRight';
+  | 'bottomRight'
+  | 'rightTop'
+  | 'rightBottom'
+  | 'leftTop'
+  | 'leftBottom';
 
 export interface PopoverProps {
   /**

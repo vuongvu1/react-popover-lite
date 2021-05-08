@@ -51,10 +51,10 @@ const [isOpen, setOpen] = useState(false);
 
 ## API
 
-| <b>Props<b>    | Type                                                                                         | Required | Description                                            |
-| -------------- | -------------------------------------------------------------------------------------------- | :------: | ------------------------------------------------------ |
-| children       | `ReactNode`                                                                                  |    ✓     | A React child which the popover's position will follow |
-| isOpen         | `Boolean`                                                                                    |    ✓     | Show/hide popover                                      |
-| onClickOutside | `() => void`                                                                                 |          | Handle event when user clicking outside of the popover |
-| content        | `ReactNode`                                                                                  |    ✓     | Popover content                                        |
-| position       | 'top' \| 'right'\| 'bottom'\| 'left'\| 'topLeft'\| 'topRight'\| 'bottomLeft'\| 'bottomRight' |          | Popover position (default is 'bottom')                 |
+| <b>Props<b>    | Type                                                                                                                                                      | Required | Description                                            |
+| -------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- | :------: | ------------------------------------------------------ |
+| children       | `ReactNode`                                                                                                                                               |    ✓     | A React child which the popover's position will follow |
+| isOpen         | `Boolean`                                                                                                                                                 |    ✓     | Show/hide popover                                      |
+| onClickOutside | `() => void`                                                                                                                                              |          | Handle event when user clicking outside of the popover |
+| content        | `ReactNode`                                                                                                                                               |    ✓     | Popover content                                        |
+| position       | 'top' \| 'right'\| 'bottom'\| 'left'\| 'topLeft'\| 'topRight'\| 'bottomLeft' \| 'bottomRight' \| 'leftTop' \| 'leftBottom' \| 'rightTop' \| 'rightBottom' |          | Popover position (default is 'bottom')                 |

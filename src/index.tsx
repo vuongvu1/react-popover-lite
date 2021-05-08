@@ -17,7 +17,11 @@ export type Position =
   | 'topLeft'
   | 'topRight'
   | 'bottomLeft'
-  | 'bottomRight';
+  | 'bottomRight'
+  | 'rightTop'
+  | 'rightBottom'
+  | 'leftTop'
+  | 'leftBottom';
 
 type Props = {
   isOpen: boolean;
@@ -62,13 +66,15 @@ const TooltipPopover: FC<Props> = ({
         case 'left':
           pos = {
             ...pos,
-            transform: `translate(calc(-100% - ${rect.width / 2}px), -${rect.height / 2}px)`,
+            transform: `translate(calc(-100% - ${rect.width / 2}px), calc(-50% + ${
+              rect.height / 2
+            }px))`,
           };
           break;
         case 'right':
           pos = {
             ...pos,
-            transform: `translate(${rect.width / 2}px, -${rect.height / 2}px)`,
+            transform: `translate(${rect.width / 2}px, calc(-50% + ${rect.height / 2}px))`,
           };
           break;
         case 'topLeft':
@@ -93,6 +99,32 @@ const TooltipPopover: FC<Props> = ({
           pos = {
             ...pos,
             transform: `translate(calc(${rect.width / 2}px - 100%), ${rect.height}px)`,
+          };
+          break;
+        case 'rightTop':
+          pos = {
+            ...pos,
+            transform: `translate(${rect.width / 2}px, 0)`,
+          };
+          break;
+        case 'rightBottom':
+          pos = {
+            ...pos,
+            transform: `translate(${rect.width / 2}px, calc(-100% + ${rect.height}px))`,
+          };
+          break;
+        case 'leftTop':
+          pos = {
+            ...pos,
+            transform: `translate(calc(-100% - ${rect.width / 2}px), 0)`,
+          };
+          break;
+        case 'leftBottom':
+          pos = {
+            ...pos,
+            transform: `translate(calc(-100% - ${rect.width / 2}px) , calc(-100% + ${
+              rect.height
+            }px))`,
           };
           break;
         default:

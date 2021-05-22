@@ -22,6 +22,7 @@ export interface PopoverProps {
   isOpen: boolean;
   onClickOutside?: () => void;
   position?: Position;
+  zIndex?: number;
 }
 
 declare const Popover: FC<PopoverProps>;

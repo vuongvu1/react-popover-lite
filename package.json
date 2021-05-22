@@ -1,6 +1,6 @@
 {
   "name": "react-popover-lite",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "A simple popover react higher order component with zero dependencies, TypeScript support.",
   "keywords": [
     "react",

@@ -28,6 +28,7 @@ type Props = {
   content: ReactNode;
   position?: Position;
   onClickOutside?: () => void;
+  zIndex?: number;
 };
 
 const TooltipPopover: FC<Props> = ({
@@ -36,6 +37,7 @@ const TooltipPopover: FC<Props> = ({
   isOpen,
   position = 'bottom',
   onClickOutside,
+  zIndex,
 }) => {
   const [coords, setCoords] = useState<CoordType>({});
   const triggerRef = useRef<HTMLDivElement>(null);
@@ -168,6 +170,7 @@ const TooltipPopover: FC<Props> = ({
             ref={contentRef}
             coords={coords}
             updateCoords={() => updateCoords(triggerRef.current)}
+            zIndex={zIndex}
           >
             {content}
           </Popover>
